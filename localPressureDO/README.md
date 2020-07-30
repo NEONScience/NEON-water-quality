@@ -1,19 +1,23 @@
-NEON Water Quality Repo
+NEON Local Dissolved Oxygen % Saturation
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <!-- ****** Description ****** -->
 
-This repository is for code that can be used for working with NEON water
-quality data.
+Contains functions to format data and calculate dissolved oxygen (DO) %
+saturation at local conditions.
 
 <!-- ****** Usage ****** -->
 
 ## Usage
 
-This repository is designed to be used with NEON water quality data
-product (DP1.20288.001).
+The functions in this package have the following purpose: (1) to format
+downloaded data and (2) to calculate DO percent saturation using two
+different equations. See help files for individual functions for
+details. The general flow of using this package is:
+
+1.  download data from the NEON data portal…
 
 <!-- ****** Acknowledgements ****** -->
 

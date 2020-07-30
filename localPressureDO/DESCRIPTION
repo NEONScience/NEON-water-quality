@@ -1,0 +1,10 @@
+Package: localPressureDO
+Title: Correct DO saturation to local atmospheric pressure
+Version: 0.0.0.9000
+Authors@R: person("Bobby", "Hensley", email = "hensley@battelleecology.org", role = c("aut", "cre"))
+Description: This R script calculates the dissolved oxygen (DO) percent saturation at local atmospheric pressure from the DO percent saturation reported in the water quality data product (DP1.20288.001), which is incorrectley referenced to sea level.This can be done using eitehr the Benson-Krause equation used by the USGS, or a simplified version found in the YSI EXO2 manual.
+Depends: R (>= 3.6.0), neonUtilities, zoo
+License: AGPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
