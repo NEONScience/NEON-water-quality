@@ -17,7 +17,22 @@ downloaded data and (2) to calculate DO percent saturation using two
 different equations. See help files for individual functions for
 details. The general flow of using this package is:
 
-1.  download data from the NEON data portal…
+1.  download data from the NEON data portal using getAndFormatData
+2.  Calculate dissolved oxygen percent saturation using either
+    calcYSI\_eq or calcBK\_eq.
+
+An example workflow:
+
+HOPB\_DO\_data \<- localPressureDO::getAndFormatData(siteName=“HOPB”,
+startDate=“2019-08”, endDate=“2019-09”)
+
+HOPB\_DO\_data\_YSI \<- localPressureDO::calcYSI\_eq(mergedData =
+HOPB\_DO\_data)
+base::write.csv(HOPB\_DO\_data\_YSI,file=“Corrected\_DO\_saturation\_YSI\_corr.csv”)
+
+HOPB\_DO\_data\_both \<- localPressureDO::calcBK\_eq(mergedData =
+HOPB\_DO\_data\_YSI)
+base::write.csv(HOPB\_DO\_data\_both,file=“Corrected\_DO\_saturation\_both.csv”)
 
 <!-- ****** Acknowledgements ****** -->
 
