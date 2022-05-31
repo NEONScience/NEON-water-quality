@@ -44,7 +44,7 @@
 
 #' @export
 
-#' @example
+#' @examples
 #' HOPB_DO_data <- getAndFormatData(siteName="HOPB", startDate="2019-08", endDate="2019-09")
 #' HOPB_DO_data_corr <- calcBK_eq(mergedData = HOPB_DO_data)
 
@@ -66,12 +66,12 @@ calcBK_eq <- function(
   if(!("seaLevelDissolvedOxygenSat" %in% names(mergedData))){
     stop("Dissolved oxygen saturation (seaLevelDissolvedOxygenSat) data is missing or has wrong column name.")
   }
-  #' Calculates corrected percent saturation using Benson-Krause equation.
+  # Calculates corrected percent saturation using Benson-Krause equation.
   mergedData$vapPres<-exp(11.8571 - (3840.7/(mergedData$surfWaterTempMean+273.15))-(216961/((mergedData$surfWaterTempMean+273.15)^2)))
   mergedData$theta<- 0.000975 - (0.00001426*mergedData$surfWaterTempMean) + (0.00000006436*(mergedData$surfWaterTempMean^2))
   mergedData$Fp<-((mergedData$staPresMean - mergedData$vapPres)*(1-(mergedData$theta*mergedData$staPresMean)))/((1-mergedData$vapPres)*(1-mergedData$theta))
   mergedData$dissolvedOxygenSatCorrected<-mergedData$seaLevelDissolvedOxygenSat*(100/mergedData$Fp)
-  #' Carries over any DO saturation or barometric pressure quality flags into corrected DO saturation quality flag
+  # Carries over any DO saturation or barometric pressure quality flags into corrected DO saturation quality flag
   mergedData$DissolvedOxygenSatCorrectedQF<-mergedData$seaLevelDOSatFinalQF+mergedData$staPresFinalQF+mergedData$TSWfinalQF
 
   return(mergedData)

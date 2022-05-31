@@ -28,6 +28,9 @@ water quality (DP1.20288.001)
 barometric pressure (DP1.00004.001)
 water temperature (DP1.20053.001) - Note water temp is only used for Benson-Krause method.
 }
+\examples{
+getAndFormatData(siteName="HOPB", startDate="2019-08", endDate="2019-09")
+}
 \references{
 License: GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 }

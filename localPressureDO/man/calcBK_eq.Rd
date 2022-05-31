@@ -43,6 +43,10 @@ where T is water temperature in degrees C.
 Pressure is obtained from the barometric pressure data product (DP1.00004.001), and water temperature is obtained
 from the water temperature data product (DP1.20053.001).
 }
+\examples{
+HOPB_DO_data <- getAndFormatData(siteName="HOPB", startDate="2019-08", endDate="2019-09")
+HOPB_DO_data_corr <- calcBK_eq(mergedData = HOPB_DO_data)
+}
 \references{
 License: GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 }

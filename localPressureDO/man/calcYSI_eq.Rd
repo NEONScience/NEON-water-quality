@@ -34,6 +34,10 @@ to be 760 mmHg or 101.325 atm.
 
 Pressure is obtained from the barometric pressure data product (DP1.00004.001).
 }
+\examples{
+HOPB_DO_data <- getAndFormatData(siteName="HOPB", startDate="2019-08", endDate="2019-09")
+HOPB_DO_data_YSI <- calcYSI_eq(mergedData = HOPB_DO_data)
+}
 \references{
 License: GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 }
