@@ -55,7 +55,7 @@ getAndFormatData <- function(
   base::list2env(sondeData, .GlobalEnv)
   waq_instantaneous<-waq_instantaneous[,c("domainID","siteID","horizontalPosition","verticalPosition","startDateTime",
                                           "endDateTime","specificConductance","specificCondFinalQF","dissolvedOxygen",
-                                          "dissolvedOxygenFinalQF","dissolvedOxygenSaturation","dissolvedOxygenSatFinalQF")]
+                                          "dissolvedOxygenFinalQF","seaLevelDissolvedOxygenSat","seaLevelDOSatFinalQF")]
   waq_instantaneous$startDateTime<-as.POSIXct(round.POSIXt(waq_instantaneous$startDateTime,units="mins"),
                                               format="%Y-%m-%dT%H:%M", tz="UTC")
   waq_instantaneous$endDateTime<-as.POSIXct(round.POSIXt(waq_instantaneous$endDateTime,units="mins"),

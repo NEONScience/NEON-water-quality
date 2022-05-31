@@ -44,14 +44,14 @@
 calcYSI_eq <- function(
   mergedData=NULL
 ){
-  if(!("dissolvedOxygenSaturation" %in% names(mergedData))){
-    stop("Dissolved oxygen saturation (dissolvedOxygenSaturation) data is missing or has wrong column name.")
+  if(!("seaLevelDissolvedOxygenSat" %in% names(mergedData))){
+    stop("Dissolved oxygen saturation (seaLevelDissolvedOxygenSat) data is missing or has wrong column name.")
   }
   if(!("staPresMean" %in% names(mergedData))){
     stop("Mean station pressure (staPresMean) data is missing or has wrong column name.")
   }
-  mergedData$YSIMethod<-mergedData$dissolvedOxygenSaturation*(101.325/mergedData$staPresMean)
-  mergedData$DissolvedOxygenSatCorrectedQF<-mergedData$dissolvedOxygenSatFinalQF+mergedData$staPresFinalQF
+  mergedData$YSIMethod<-mergedData$seaLevelDissolvedOxygenSat*(101.325/mergedData$staPresMean)
+  mergedData$DissolvedOxygenSatCorrectedQF<-mergedData$seaLevelDOSatFinalQF+mergedData$staPresFinalQF
   return(mergedData)
 }
 
