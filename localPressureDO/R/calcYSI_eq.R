@@ -40,6 +40,8 @@
 # changelog and author contributions / copyrights
 #   Bobby Hensley (7/22/2020)
 #     Original Creation
+#   Bobby Hensley (5/31/2022)
+#     Updated to use new term name "seaLevelDissolvedOxygenSat"
 ########################################################################################################################
 calcYSI_eq <- function(
   mergedData=NULL
